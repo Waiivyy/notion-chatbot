@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Chatbot</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+    }
+    .chatbox { margin-top: 1rem; }
+    .message { padding: 10px; margin-bottom: 10px; border-radius: 8px; }
+    .user { background: #e0f7fa; text-align: right; }
+    .bot { background: #f1f1f1; text-align: left; }
+  </style>
+</head>
+<body>
+  <h2>🎯 Smart ICP Chatbot</h2>
+  <input type="text" placeholder="Enter ICP..." id="icp" style="width:100%;padding:8px;">
+  <button onclick="submitICP()">Submit</button>
+
+  <div class="chatbox" id="chat">
+    <!-- Chat responses will go here -->
+  </div>
+
+  <script>
+    function submitICP() {
+      const icp = document.getElementById('icp').value;
+      const chat = document.getElementById('chat');
+      const response = `You entered: ${icp}. (Pretend response from GPT)`;
+      chat.innerHTML += `<div class='message user'>${icp}</div>`;
+      chat.innerHTML += `<div class='message bot'>${response}</div>`;
+    }
+  </script>
+</body>
+</html>
